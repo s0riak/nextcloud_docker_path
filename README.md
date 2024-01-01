@@ -1,5 +1,5 @@
 # About
-This a minimal example on howto serve nextcloud with a host and a path.
+This a minimal example on howto serve nextcloud with a host and a path (i.e. /nextcloud.
 
 To achieve this the setup includes to nginx containers:
 1. One provided in the nextcloud boilerplate

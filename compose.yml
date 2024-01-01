@@ -4,7 +4,7 @@ version: '3'
 services:
   mariadb:
     image: mariadb:10.6
-    container_name: nextcloud_subpath_mariadb
+    container_name: nextcloud_docker_path_mariadb
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
     restart: unless-stopped
     volumes:
@@ -18,12 +18,12 @@ services:
 
   redis:
     image: redis:alpine
-    container_name: nextcloud_subpath_redis
+    container_name: nextcloud_docker_path_redis
     restart: unless-stopped
 
   nextcloud:
     image: nextcloud:fpm-alpine
-    container_name: nextcloud_subpath_nextcloud
+    container_name: nextcloud_docker_path_nextcloud
     restart: unless-stopped
     volumes:
       - nextcloud:/var/www/html:z
@@ -40,7 +40,7 @@ services:
 
   nginx:
     image: nginx
-    container_name: nextcloud_subpath_nginx
+    container_name: nextcloud_docker_path_nginx
     restart: unless-stopped
     volumes:
       - nextcloud:/var/www/html:z,ro
@@ -50,7 +50,7 @@ services:
 
   entry_nginx:
     image: nginx
-    container_name: nextcloud_subpath_entry_nginx
+    container_name: nextcloud_docker_path_entry_nginx
     restart: unless-stopped
     ports:
       - "80:80"
@@ -61,7 +61,7 @@ services:
 
   cron:
     image: nextcloud:fpm-alpine
-    container_name: nextcloud_subpath_cron
+    container_name: nextcloud_docker_path_cron
     restart: unless-stopped
     volumes:
       - ./nextcloud:/var/www/html:z
