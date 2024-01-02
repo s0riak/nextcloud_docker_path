@@ -13,7 +13,7 @@ Just run ```sudo docker compose up``` to start the setup.
 
 Run
 ```bash
-sudo docker compose rm --stop --volumes && sudo docker volume rm nextcloud_docker_subpath_mariadb &&
+sudo docker compose rm --stop --volumes && sudo docker volume rm nextcloud_docker_path_mariadb &&
  sudo rm -rf nextcloud
 ```
 to purge environment and start over with a new path.
@@ -26,7 +26,7 @@ See the purging of the setup in Usage.
 3. The ```NEXTCLOUD_TRUSTED_DOMAINS``` needs to be adapted to match the hostname of the ```entry_nginx```
 3. Nextcloud requires the headers which are passed by ```entry_nginx/nginx.conf```
 4. After install in some cases an 500 error with ```Table ‘nextcloud.oc_appconfig’ doesn’t exist``` in the logs
-```sudo docker exec -i nextcloud_subpath_nextcloud less /var/www/html/data/nextcloud.log``` occurred. Purging the
+```sudo docker exec -i nextcloud_path_nextcloud less /var/www/html/data/nextcloud.log``` occurred. Purging the
 environment seems to help, which is kind of disturbing.
 
 
