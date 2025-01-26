@@ -1,6 +1,4 @@
 # https://github.com/nextcloud/docker
-version: '3'
-
 services:
   mariadb:
     image: mariadb:10.6
